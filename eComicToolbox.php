@@ -1,5 +1,5 @@
 <?php
-/*
+/**
 MIT License
 
 Copyright (c) 2017 Daniel
@@ -159,6 +159,7 @@ class EComicToolbox {
 		$fp = fopen($this->path.DS."volumelist.txt", "r");
 		if($fp) {
 			$chapterFolders = array();
+			$lineNumber = 1;
 			while(($line = fgets($fp)) !== false) {
 				$data = array();
 				if(preg_match('~'.$this->volumeListRegex.'~', $line, $data) == 1) {
@@ -175,6 +176,11 @@ class EComicToolbox {
 						while (false !== ($dir = readdir($handle))) {
 							if (!in_array($dir, $this->blacklist) && is_dir($this->path.DS.$dir)) {
 								$directoryChapter = (int)$dir;
+								$matches = array();
+								preg_match('~(\d+)~', $dir, $matches);
+								if(isset($matches[1]) && is_numeric($matches[1])) {
+									$directoryChapter = $matches[1];
+								}
 								if($directoryChapter >= $chapterStart && $directoryChapter <= $chapterEnd) {
 									$chapterFolders[$volume]['folders'][] = $this->path.DS.$dir;
 								}
@@ -182,12 +188,14 @@ class EComicToolbox {
 						}
 					}
 				} else {
-					echo "ERROR: Couldn't match regex for volumelist.txt.\n";
+					echo "ERROR: Couldn't match regex for volumelist.txt Line $lineNumber.\n";
 				}
+				$lineNumber++;
 			}
 			foreach($chapterFolders as $vol => $folders) {
 				echo "\nVol.$vol contains ({$folders['chapterStart']} - {$folders['chapterEnd']}):\n\t";
 				if(!empty($folders['folders'])) {
+					sort($folders['folders'], SORT_NATURAL);
 					echo implode("\n\t", $folders['folders']);
 				}
 			}
@@ -208,6 +216,7 @@ class EComicToolbox {
 					
 					$pagenumber = 1;
 					if(!empty($folders['folders'])) {
+						sort($folders['folders'], SORT_NATURAL);
 						foreach($folders['folders'] as $chapterFolder) {
 							$files = array_diff(scandir($chapterFolder), array('..', '.'));
 							if(!empty($files)) {
