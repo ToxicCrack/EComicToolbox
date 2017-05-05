@@ -28,20 +28,20 @@ Your chapter-directories or chapter-cbz's should be named as "0001 - Comicname".
 Assuming you have .cbz's "001 MyComic.cbz" to "056 MyComic.cbz" in the directory with the script. It will create directories "001 MyComic" to "056 MyComic".
 
 ## Mass compress folders to .cbz
-<i>c:\php\php.exe eComicToolbox.php zipFolders</i>
+<code>c:\php\php.exe eComicToolbox.php zipFolders</code>
 <br />
 <br />
 Assuming you have folders "001 MyComic" to "056 MyComic" in the directory with the script. It will create "001 MyComic.cbz" to "056 MyComic.cbz" inside a new directory (./new by default).
 
 ## Mass rename pages (add paddings)
-<i>c:\php\php.exe eComicToolbox.php addPaddings</i>
+<code>c:\php\php.exe eComicToolbox.php addPaddings</code>
 <br />
 <br />
 Assuming you have extracted your .cbz files and have now chapter-folders which including the images from the respective chapter.<br />
 This method reads all folders and adds an padding to the filename (filnames must be numeric!). I.e.: 2.jpg -> P002.jpg. The files getting replaced!
 
 ## Creating volumes from chapters
-<i>c:\php\php.exe eComicToolbox.php makeVolumes -comicName=MyComic</i>
+<code>c:\php\php.exe eComicToolbox.php makeVolumes -comicName=MyComic</code>
 <br />
 <br />
 Assuming you have extracted your .cbz files and have now chapter-folders which including the images from the respective chapter.<br />
