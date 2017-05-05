@@ -1,5 +1,5 @@
 <?php
-/**
+/*
 MIT License
 
 Copyright (c) 2017 Daniel
@@ -93,7 +93,7 @@ class EComicToolbox {
 					$files = array_diff(scandir($path.DS.$dir), array('..', '.'));
 					
 					//There may be to many files to zip them in one command -> Split them up
-					$cmd = $this->zipCmd.' a -tzip "'.$path.DS.$zipIntoSubdir.DS.$dir.'.cbz" ';
+					$cmd = $this->zipCmd.' a -y -tzip "'.$path.DS.$zipIntoSubdir.DS.$dir.'.cbz" ';
 					$fileStr = "";
 					$numFiles = count($files);
 					foreach($files as $i => $file) {
