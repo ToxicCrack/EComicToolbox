@@ -22,7 +22,7 @@ Open cmd.exe, navigate to your directory in which your files are (.cbz's or dire
 Your chapter-directories or chapter-cbz's should be named as "0001 - Comicname". The important part is the numbering at the first place. It can be "1 - Comicname" but not "Comicname - 1". In that case, please use a mass-renamer tool.
 
 ## Mass extract .cbz to folders
-<i>c:\php\php.exe eComicToolbox.php unzipIntoFolders</i>
+<code>c:\php\php.exe eComicToolbox.php unzipIntoFolders</code>
 <br />
 <br />
 Assuming you have .cbz's "001 MyComic.cbz" to "056 MyComic.cbz" in the directory with the script. It will create directories "001 MyComic" to "056 MyComic".
