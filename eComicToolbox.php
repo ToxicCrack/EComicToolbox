@@ -2,7 +2,7 @@
 /*
 MIT License
 
-Copyright (c) 2017 Daniel Lichtblau
+Copyright (c) 2017 Daniel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -139,6 +139,7 @@ class EComicToolbox {
 			while (false !== ($dir = readdir($handle))) {
 				if (!in_array($dir, $this->blacklist) && is_dir($this->path.DS.$dir)) {
 					$files = array_diff(scandir($this->path.DS.$dir), array('..', '.'));
+					sort($files, SORT_NATURAL);
 					foreach($files as $file) {
 						$ext = strrchr($file, '.');
 						$newFilename = $this->paddingPrefix.sprintf('%0'.$this->numberPadding.'d', $file).$ext;
@@ -211,6 +212,7 @@ class EComicToolbox {
 							$files = array_diff(scandir($chapterFolder), array('..', '.'));
 							if(!empty($files)) {
 								if(!is_dir($volumeDir)) mkdir($volumeDir);
+								sort($files, SORT_NATURAL);
 								foreach($files as $filename) {
 									$ext = strrchr($filename, '.');
 									$newFilename = $this->paddingPrefix.sprintf('%0'.$this->numberPadding.'d', $pagenumber).$ext;
