@@ -12,7 +12,7 @@ With this script you can easily create Comic/Manga .cbz files and volumes from c
 - Mass creation of book volumes from chapter-folders (chapter1/, chapter2/,.. -> Volume 1)
 
 ## Prerequisites (Windows)
-- Download PHP http://www.php.net and unzip it (in an easy to reach folder, like c:\php)
+- Download PHP http://www.php.net and unzip it (in an easy-to-reach folder, like c:\php)
 - Download and install 7-Zip http://www.7-zip.org/ (Default: c:\Program Files\7-Zip\ otherwise adjust the path in the script)
 - Copy eComicToolbox.php to the directory with your .cbz chapters oder folders.
 - Your chapter-directories or chapter-cbz's should be named as "0001 Comicname" or "1 Comicname" etc. First part should be a number.
