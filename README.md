@@ -48,7 +48,8 @@ Assuming you have extracted your .cbz files and have now chapter-folders which i
 This method reads the volumelist.txt to determine which chapters are in one volume. <br /><br />
 (The content of volumelist.txt is simply copy&pasted from http://mangafox.me/ . Choose an comic/manga and scroll down. There is a most of the time a volume overview. Collapse all expanded tabs and copy the text.)<br /><br />
 The chapters and volumes in the volumelist doesn't have to be zero-padded. It's fine how it is in my example.<br />
-So, it puts the contents of the chapter-directories in a new volume directory (all this under ./volumes) and renames the pages accordingly. After that, it creates .cbz's of your volumes prefixed which whatever you typed at -comicName (default: Comic) -> Comic 001.cbz)
+So, it puts the contents of the chapter-directories in a new volume directory (all this under ./volumes) and renames the pages accordingly.
+<br />After that, it creates .cbz's of your volumes prefixed which whatever you typed at -comicName (default: Comic) -> Comic 001.cbz
 
 # Developers
 Feel free to modify the script to your needs. The most important settings are public class properties.
