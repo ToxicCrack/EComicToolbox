@@ -2,7 +2,7 @@
 /*
 MIT License
 
-Copyright (c) 2017 Daniel
+Copyright (c) 2017 Daniel Lichtblau
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -105,7 +105,7 @@ class EComicToolbox {
 						}
 					}
 					//var_dump($cmd);
-					echo $dir.".cbz\n";
+					echo "Zipping: ".$dir.".cbz\n";
 				}
 			}
 			echo "DONE\n";
@@ -259,6 +259,10 @@ switch($argv[1]) {
 	break;
 	case 'makeVolumes':
 	case '-makeVolumes':
+		$toolbox->makeVolumes();
+	break;
+	case 'autovolume':
+		$toolbox->unzipIntoFolders();
 		$toolbox->makeVolumes();
 	break;
 	default:
